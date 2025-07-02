@@ -1,5 +1,6 @@
 import '../../App.css';
 import { useEffect, useState, useRef } from 'react';
+import HomeIcon from '../../assets/img/home.png';
 import Logo from '../../assets/img/logo.png';
 import { getRandomSetting, getRandomLetter } from '../../database/context';
 import finish from '../../assets/sounds/finish.mp3';
@@ -28,7 +29,7 @@ function Game() {
   // Temporizador do sorteio
   useEffect(() => {
     let timer;
-    if (contadorAtivo && tempo  > 0) {
+    if (contadorAtivo && tempo > 0) {
       timer = setTimeout(() => setTempo((prev) => prev - 1), 1000);
     } else if (tempo === 0 && contadorAtivo) {
       setContadorAtivo(false);
@@ -52,6 +53,10 @@ function Game() {
 
   return (
     <div className="container">
+      <header>
+        <a href="/"><img src={HomeIcon} alt="Home" className="icon-home" /></a>
+      </header>
+
       <img src={Logo} className="logo-game" alt="Logo Quiz" />
 
       <div className="card">
