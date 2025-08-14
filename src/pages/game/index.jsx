@@ -34,7 +34,7 @@ function Game() {
     } else if (tempo === 0 && contadorAtivo) {
       setContadorAtivo(false);
       setDiscussaoAtiva(true);
-      setTempoDiscussao(59); // tempo de escolha
+      setTempoDiscussao(30); // tempo de escolha
     }
     return () => clearTimeout(timer);
   }, [tempo, contadorAtivo]);
